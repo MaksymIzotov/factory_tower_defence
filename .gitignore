@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Uu]ser[Ss]ettings/
+/Factory Tower Defense/[Ll]ibrary/
+/Factory Tower Defense/[Tt]emp/
+/Factory Tower Defense/[Oo]bj/
+/Factory Tower Defense/[Bb]uild/
+/Factory Tower Defense/[Bb]uilds/
+/Factory Tower Defense/[Ll]ogs/
+/Factory Tower Defense/[Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
