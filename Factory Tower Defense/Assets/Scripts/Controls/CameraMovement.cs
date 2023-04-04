@@ -42,7 +42,7 @@ public class CameraMovement : MonoBehaviour
                 cameraTransform.position = cameraTransform.position + new Vector3(
                     -movePos.x * movementSpeed,
                     0,
-                    -movePos.y * movementSpeed
+                    -movePos.y * movementSpeed * 1.2f
                 );
             }
 
