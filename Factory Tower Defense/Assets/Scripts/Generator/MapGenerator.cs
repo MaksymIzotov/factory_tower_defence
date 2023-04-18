@@ -11,8 +11,7 @@ public class MapGenerator : MonoBehaviour
     public struct Entity{
         public GameObject prefab;
         public int amount;
-        public Vector2Int spawnBorders;
-        public Vector2Int spawnBordersInside;
+        public int offset;
     }
 
     [SerializeField] private GameObject woodPrefab;
@@ -32,16 +31,11 @@ public class MapGenerator : MonoBehaviour
 
     private void Generate()
     {
-        for (float i = 0; i < size.x * spacing; i += spacing)
+        for (float i = size.x * -spacing; i < size.x * spacing; i += spacing)
         {
-            for (float j = 0; j < size.y * spacing; j += spacing)
+            for (float j = size.y * -spacing; j < size.y * spacing; j += spacing)
             {
-                availableLocations.Add(new Vector3(i, 0,j));
-
-                //if(UnityEngine.Random.Range(0,100) < spawnChance)
-                //{
-                //    Instantiate(woodPrefab, new Vector3(i, 0, j), Quaternion.Euler(new Vector3(0, UnityEngine.Random.Range(0, 360), 0)));
-                //}
+                availableLocations.Add(new Vector3(i, 0,j));               
             }
         }
 
@@ -60,8 +54,7 @@ public class MapGenerator : MonoBehaviour
 
         foreach (Vector3 pos in availableLocations)
         {
-            if (pos.x > entity.spawnBorders.x * spacing && pos.x < (size.x - entity.spawnBorders.x) * spacing)
-                if (pos.z > entity.spawnBorders.y * spacing && pos.z < (size.y - entity.spawnBorders.y) * spacing)
+            if (pos.x < -entity.offset * spacing || pos.x > entity.offset * spacing || pos.z < -entity.offset * spacing || pos.z > entity.offset * spacing)
                     positions.Add(pos);
         }
 
